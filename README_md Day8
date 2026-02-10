@@ -1,0 +1,108 @@
+📘 Topic: Sliding Window
+🎯 Focus Companies: Google, Amazon, Meta, Netflix, Uber
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Fixed Sliding Window
+2️⃣ Variable Sliding Window
+
+1️⃣ Fixed Sliding Window
+🔹 Problem
+
+Find the maximum sum of a subarray of size k.
+
+🧠 Python Code (5 lines)
+a=[2,1,5,1,3,2]; k=3
+s=sum(a[:k]); m=s
+for i in range(k,len(a)):
+    s+=a[i]-a[i-k]; m=max(m,s)
+print(m)
+
+🖥️ Output
+9
+
+📖 Explanation
+
+First, calculate the sum of the first window of size k.
+
+Then slide the window:
+
+Add the new element
+
+Remove the element going out
+
+Track the maximum sum seen.
+
+⏱️ Interview Insight
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)
+
+🎤 Interview Explanation
+
+“I reuse the previous window sum instead of recalculating it, reducing time to O(n).”
+
+2️⃣ Variable Sliding Window
+🔹 Problem
+
+Find the longest subarray with sum ≤ target.
+
+🧠 Python Code (5 lines)
+a=[2,1,5,2,3]; t=7
+l=s=m=0
+for r in range(len(a)):
+    s+=a[r]
+    while s>t: s-=a[l]; l+=1
+    m=max(m,r-l+1)
+print(m)
+
+🖥️ Output
+2
+
+📖 Explanation
+
+Right pointer expands the window.
+
+If sum exceeds target, move left pointer to shrink it.
+
+Track the maximum window size.
+
+⏱️ Interview Insight
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)
+
+🎤 Interview Explanation
+
+“I dynamically expand and shrink the window based on the condition.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. What is sliding window?
+A: An optimization technique to process contiguous subarrays efficiently.
+
+Q2. Fixed vs variable window?
+A: Fixed has constant size; variable adjusts based on conditions.
+
+Q3. Why sliding window over brute force?
+A: It avoids repeated calculations and improves performance.
+
+Q4. Where is it used?
+A: Subarray sums, longest substrings, stock problems.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Fixed Window (Average)
+a=[1,2,3,4]; k=2
+s=sum(a[:k])
+for i in range(k,len(a)): s=max(s,sum(a[i-k+1:i+1]))
+print(s)
+
+🔹 Variable Window (At Most K Sum)
+a=[1,2,1,1]; t=3
+l=s=m=0
+for r in range(len(a)):
+    s+=a[r]
+    while s>t: s-=a[l]; l+=1
+    m=max(m,r-l+1)
+print(m)
