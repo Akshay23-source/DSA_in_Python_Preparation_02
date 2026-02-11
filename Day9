@@ -1,0 +1,102 @@
+📘 Topic: Linked List (Next Level)
+🎯 Focus Companies: Amazon, Microsoft, Google, Meta
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Detect Cycle in Linked List
+2️⃣ Find Middle Node
+
+1️⃣ Detect Cycle (Floyd’s Algorithm – Tortoise & Hare)
+🔹 Concept
+
+Use two pointers:
+
+Slow → moves 1 step
+
+Fast → moves 2 steps
+If they meet → cycle exists.
+
+🧠 Python Code (Concept Simulation – 5 lines)
+a=[1,2,3,4]; slow=fast=0
+while fast<len(a)-1:
+    slow+=1; fast+=2
+    if slow==fast: print("Cycle"); break
+else: print("No Cycle")
+
+📖 Explanation
+
+In real linked list, fast catches slow only if a cycle exists.
+
+If no cycle → fast reaches end.
+
+⏱️ Interview Insight
+
+Time: O(n)
+
+Space: O(1)
+
+Very common Amazon question.
+
+🎤 Interview Explanation
+
+“I use Floyd’s cycle detection where two pointers move at different speeds.”
+
+2️⃣ Find Middle Node
+🔹 Concept
+
+Use two pointers:
+
+Slow moves 1 step
+
+Fast moves 2 steps
+When fast reaches end → slow is at middle.
+
+🧠 Python Code (4 lines)
+a=[1,2,3,4,5]
+slow=fast=0
+while fast<len(a)-1: slow+=1; fast+=2
+print(a[slow])
+
+🖥️ Output
+3
+
+📖 Explanation
+
+Fast reaches end twice as quickly.
+
+Slow ends exactly at middle.
+
+⏱️ Interview Insight
+
+Time: O(n)
+
+Space: O(1)
+
+🎤 Interview Explanation
+
+“Using two pointers avoids counting length separately.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. Why use two pointers for linked list problems?
+A: It allows solving problems in one pass with constant space.
+
+Q2. What is Floyd’s algorithm used for?
+A: Detecting cycles efficiently.
+
+Q3. Why not use a hash set to detect cycle?
+A: It uses extra O(n) space, while two-pointer uses O(1).
+
+Q4. How do you find middle in one pass?
+A: Move fast pointer twice as fast as slow pointer.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Middle Element (Even Length)
+a=[1,2,3,4]
+print(a[len(a)//2])
+
+🔹 Simple Cycle Check (Using Set)
+a=[1,2,3,2]
+s=set()
+for x in a:
+    if x in s: print("Cycle"); break
+    s.add(x)
