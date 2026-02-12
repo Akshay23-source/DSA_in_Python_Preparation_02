@@ -1,0 +1,110 @@
+📘 Topic: Stack
+🎯 Focus Companies: Amazon, Microsoft, Google, Adobe, Salesforce
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Push / Pop Operations
+2️⃣ Valid Parentheses Problem
+
+1️⃣ Stack – Push / Pop (LIFO)
+🔹 Concept
+
+Stack follows LIFO → Last In, First Out.
+
+🧠 Python Code (4 lines)
+s=[]
+s.append(10); s.append(20)
+print(s.pop())
+print(s)
+
+🖥️ Output
+20
+[10]
+
+📖 Explanation
+
+append() → Push operation
+
+pop() → Remove last element
+
+20 was inserted last → removed first
+
+⏱️ Interview Insight
+
+Time Complexity: O(1) for push & pop
+
+Used in:
+
+Function calls
+
+Undo/Redo
+
+Expression evaluation
+
+🎤 Interview Explanation
+
+“Stack uses LIFO principle where insertion and deletion happen from the same end.”
+
+2️⃣ Valid Parentheses (Very Important Interview Problem)
+🔹 Problem
+
+Check if brackets are balanced: "()[]{}"
+
+🧠 Python Code (6 lines)
+s="()[]{}"; st=[]
+for c in s:
+    if c in "([{": st.append(c)
+    elif not st or "([{".index(st.pop())!=")]}".index(c):
+        print(False); break
+else: print(True)
+
+🖥️ Output
+True
+
+📖 Explanation
+
+Push opening brackets onto stack.
+
+When closing bracket appears:
+
+Check if it matches last opening.
+
+If mismatch → False.
+
+If stack empty at end → True.
+
+⏱️ Interview Insight
+
+Time Complexity: O(n)
+
+Space Complexity: O(n)
+
+🎤 Interview Explanation
+
+“I use a stack to match opening and closing brackets in order.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. What principle does stack follow?
+A: LIFO – Last In, First Out.
+
+Q2. Where are stacks used in real systems?
+A: Function calls, recursion stack, undo features.
+
+Q3. Why is stack perfect for parentheses problems?
+A: Because matching must happen in reverse order.
+
+Q4. What happens if stack is empty and closing bracket appears?
+A: The string is invalid.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Reverse String Using Stack
+s="abc"; st=[]
+for c in s: st.append(c)
+r=""
+while st: r+=st.pop()
+print(r)
+
+🔹 Check Simple Balanced ()
+s="(()())"; c=0
+for x in s: c+=1 if x=="(" else -1
+print(c==0)
