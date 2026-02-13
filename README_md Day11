@@ -1,0 +1,107 @@
+📘 Topic: Queue
+🎯 Focus Companies: Microsoft, Amazon, Uber, Cisco
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Queue Operations (FIFO)
+2️⃣ Circular Queue Concept
+
+1️⃣ Queue Operations (FIFO)
+🔹 Concept
+
+Queue follows FIFO → First In, First Out.
+
+🧠 Python Code (4 lines)
+q=[]
+q.append(10); q.append(20)
+print(q.pop(0))
+print(q)
+
+🖥️ Output
+10
+[20]
+
+📖 Explanation
+
+append() → Insert at rear (enqueue)
+
+pop(0) → Remove from front (dequeue)
+
+10 entered first → removed first
+
+⏱️ Interview Insight
+
+Time Complexity:
+
+Enqueue → O(1)
+
+Dequeue (list) → O(n)
+
+In interviews, better to use collections.deque for O(1).
+
+🎤 Interview Explanation
+
+“Queue operates on FIFO principle where insertion happens at rear and deletion at front.”
+
+2️⃣ Circular Queue Concept
+🔹 Concept
+
+In circular queue:
+
+After reaching end, queue wraps around to front.
+
+Prevents unused empty space.
+
+🧠 Python Code (6 lines)
+n=3; q=[None]*n; f=r=0
+q[r]=10; r=(r+1)%n
+q[r]=20; r=(r+1)%n
+print(q)
+
+🖥️ Output
+[10, 20, None]
+
+📖 Explanation
+
+% n makes index wrap around.
+
+Used in:
+
+Buffers
+
+Scheduling
+
+OS processes
+
+⏱️ Interview Insight
+
+Efficient memory usage
+
+Avoids shifting elements
+
+🎤 Interview Explanation
+
+“Circular queue uses modulo operation to reuse empty spaces efficiently.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. Difference between Stack and Queue?
+A: Stack is LIFO, Queue is FIFO.
+
+Q2. Why not use list for queue in real interviews?
+A: Because pop(0) is O(n). deque is better.
+
+Q3. Where are queues used?
+A: BFS, scheduling, printer queue, CPU scheduling.
+
+Q4. What is advantage of circular queue?
+A: Better space utilization.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Queue Using deque (Efficient)
+from collections import deque
+q=deque([1,2])
+q.append(3); print(q.popleft())
+
+🔹 Check Empty Queue
+q=[]
+print(len(q)==0)
