@@ -1,0 +1,117 @@
+📘 Topic: Binary Search
+🎯 Focus Companies: Google, Amazon, Microsoft, Netflix, Nvidia
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Basic Binary Search
+2️⃣ First Occurrence in Sorted Array
+
+1️⃣ Basic Binary Search
+🔹 Problem
+
+Search for a target element in a sorted array.
+
+🧠 Python Code (6 lines)
+a=[1,3,5,7,9]; t=7
+l,r=0,len(a)-1
+while l<=r:
+    m=(l+r)//2
+    if a[m]==t: print(m); break
+    elif a[m]<t: l=m+1
+    else: r=m-1
+
+🖥️ Output
+3
+
+📖 Explanation
+
+Array must be sorted.
+
+Check middle element:
+
+If equal → found.
+
+If target greater → search right half.
+
+If smaller → search left half.
+
+Each step halves the search space.
+
+⏱️ Interview Insight
+
+Time Complexity: O(log n)
+
+Space Complexity: O(1)
+
+🎤 Interview Explanation
+
+“Binary search reduces the search space by half at every step, giving logarithmic time complexity.”
+
+2️⃣ First Occurrence in Sorted Array
+🔹 Problem
+
+Find the first position of a target in sorted array with duplicates.
+
+🧠 Python Code (6 lines)
+a=[1,2,2,2,3]; t=2; ans=-1
+l,r=0,len(a)-1
+while l<=r:
+    m=(l+r)//2
+    if a[m]>=t: r=m-1
+    else: l=m+1
+    if a[m]==t: ans=m
+print(ans)
+
+🖥️ Output
+1
+
+📖 Explanation
+
+If a[m] >= target, move left to find earlier occurrence.
+
+Store answer whenever found.
+
+Continue searching left half.
+
+⏱️ Interview Insight
+
+Common variation asked in Google & Amazon.
+
+Still O(log n).
+
+🎤 Interview Explanation
+
+“I modified binary search to continue searching left even after finding the target.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. When can we use binary search?
+A: When the array is sorted.
+
+Q2. Why is binary search faster than linear search?
+A: It halves the search space instead of checking each element.
+
+Q3. What happens if array is not sorted?
+A: Binary search won’t work correctly.
+
+Q4. What is common mistake in binary search?
+A: Incorrect loop condition or wrong mid calculation.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Check Element Exists
+a=[2,4,6,8]; t=6
+l,r=0,len(a)-1
+while l<=r:
+    m=(l+r)//2
+    if a[m]==t: print(True); break
+    elif a[m]<t: l=m+1
+    else: r=m-1
+
+🔹 Last Occurrence
+a=[1,2,2,2,3]; t=2; ans=-1
+l,r=0,len(a)-1
+while l<=r:
+    m=(l+r)//2
+    if a[m]<=t: l=m+1
+    else: r=m-1
+    if a[m]==t: ans=m
+print(ans)
