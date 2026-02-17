@@ -1,0 +1,111 @@
+📘 Topic: Recursion
+🎯 Focus Companies: Google, Amazon, Microsoft, Adobe
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Factorial using Recursion
+2️⃣ Fibonacci using Recursion
+
+1️⃣ Factorial Using Recursion
+🔹 Problem
+
+Find factorial of a number n
+(Example: 5! = 5 × 4 × 3 × 2 × 1)
+
+🧠 Python Code (2 lines)
+def f(n): return 1 if n==0 else n*f(n-1)
+print(f(5))
+
+🖥️ Output
+120
+
+📖 Explanation
+
+Base case → n == 0 returns 1
+
+Otherwise → multiply n with factorial of n-1
+
+Function keeps calling itself until base case is reached.
+
+Call flow for f(5):
+
+5 × f(4)
+4 × f(3)
+3 × f(2)
+2 × f(1)
+1 × f(0)
+
+⏱️ Interview Insight
+
+Time Complexity: O(n)
+
+Space Complexity: O(n) (recursion stack)
+
+🎤 Interview Explanation
+
+“Recursion solves the problem by breaking it into smaller subproblems until reaching a base condition.”
+
+2️⃣ Fibonacci Using Recursion
+🔹 Problem
+
+Find nth Fibonacci number.
+
+Fibonacci sequence:
+
+0 1 1 2 3 5 8 ...
+
+🧠 Python Code (2 lines)
+def f(n): return n if n<2 else f(n-1)+f(n-2)
+print(f(6))
+
+🖥️ Output
+8
+
+📖 Explanation
+
+Base case → if n < 2, return n
+
+Otherwise:
+
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)
+
+For f(6):
+
+f(6) = f(5) + f(4)
+
+
+And it keeps expanding recursively.
+
+⏱️ Interview Insight
+
+Time Complexity: O(2ⁿ) ❗ (Very slow)
+
+This is why DP is introduced later.
+
+🎤 Interview Explanation
+
+“Recursive Fibonacci has exponential complexity because it recomputes subproblems.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. What is recursion?
+A: A technique where a function calls itself to solve smaller instances of the same problem.
+
+Q2. What are two main parts of recursion?
+A: Base case and recursive case.
+
+Q3. Risk of recursion?
+A: Stack overflow if base condition is missing.
+
+Q4. Why is recursive Fibonacci slow?
+A: Because it recalculates the same values multiple times.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Print Numbers 1 to N
+def f(n):
+    if n==0: return
+    f(n-1); print(n)
+f(5)
+
+🔹 Sum of First N Numbers
+def f(n): return 0 if n==0 else n+f(n-1)
+print(f(5))
