@@ -1,0 +1,109 @@
+📘 Topic: Binary Tree
+🎯 Focus Companies: Google, Amazon, Microsoft, Meta, LinkedIn
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Tree Traversals (Inorder)
+2️⃣ Height of Binary Tree
+
+1️⃣ Tree Traversal (Inorder)
+🔹 Concept
+
+Inorder Traversal order:
+
+Left → Root → Right
+🧠 Python Code (6 lines)
+class N:
+    def __init__(s,v): s.v=v; s.l=s.r=None
+def inorder(r):
+    if r:
+        inorder(r.l); print(r.v); inorder(r.r)
+t=N(1); t.l=N(2); t.r=N(3)
+inorder(t)
+🖥️ Output
+2
+1
+3
+📖 Explanation
+
+Tree structure:
+
+      1
+     / \
+    2   3
+
+Go left → print 2
+
+Print root → 1
+
+Go right → print 3
+
+That’s why output is:
+
+2 1 3
+⏱️ Interview Insight
+
+Time Complexity: O(n)
+
+Space Complexity: O(h) (recursion stack)
+
+🎤 Interview Explanation
+
+“Inorder traversal processes left subtree, then root, then right subtree recursively.”
+
+2️⃣ Height of Binary Tree
+🔹 Concept
+
+Height = number of levels in tree.
+
+🧠 Python Code (4 lines)
+def h(r):
+    if not r: return 0
+    return 1+max(h(r.l),h(r.r))
+print(h(t))
+🖥️ Output
+2
+📖 Explanation
+
+If node is empty → height 0
+
+Otherwise:
+
+Height = 1 + max(left height, right height)
+
+For this tree:
+
+Height = 2
+⏱️ Interview Insight
+
+Time Complexity: O(n)
+
+Space Complexity: O(h)
+
+🎤 Interview Explanation
+
+“Height is computed recursively by taking maximum height of left and right subtrees.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. What is a binary tree?
+A: A tree where each node has at most two children.
+
+Q2. Difference between inorder, preorder, postorder?
+A: Order of processing root relative to subtrees.
+
+Q3. What is tree height?
+A: The maximum number of levels from root to leaf.
+
+Q4. Why recursion is natural for trees?
+A: Because trees are recursive data structures.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Preorder Traversal
+def pre(r):
+    if r:
+        print(r.v); pre(r.l); pre(r.r)
+pre(t)
+🔹 Count Nodes
+def c(r):
+    return 0 if not r else 1+c(r.l)+c(r.r)
+print(c(t))
