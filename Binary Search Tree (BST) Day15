@@ -1,0 +1,132 @@
+📘 Topic: Binary Search Tree (BST)
+🎯 Focus Companies: Google, Amazon, Microsoft, Adobe, LinkedIn
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Validate Binary Search Tree
+2️⃣ Kth Smallest Element in BST
+
+1️⃣ Validate Binary Search Tree
+🔹 Concept
+
+A Binary Search Tree follows this rule:
+
+Left subtree < Root < Right subtree
+
+Every node must satisfy this condition.
+
+🧠 Python Code (6 lines)
+def isbst(a):
+    for i in range(len(a)-1):
+        if a[i]>=a[i+1]: return False
+    return True
+print(isbst([1,2,3,4]))
+🖥️ Output
+True
+📖 Explanation
+
+We simulate BST property using a sorted list.
+
+Steps:
+
+Traverse the list.
+
+Check if current element is smaller than next.
+
+If any violation occurs → not BST.
+
+Example:
+
+[1,2,3,4] → valid BST order
+[1,3,2,4] → not BST
+⏱️ Interview Insight
+
+Time Complexity → O(n)
+Space Complexity → O(1)
+
+🎤 Interview Explanation
+
+“A valid BST must produce a strictly increasing inorder traversal.”
+
+2️⃣ Kth Smallest Element in BST
+🔹 Concept
+
+In a BST, inorder traversal gives sorted order.
+
+Example BST:
+
+      5
+     / \
+    3   7
+   / \
+  2   4
+
+Inorder result:
+
+2 3 4 5 7
+
+The 3rd smallest = 4
+
+🧠 Python Code (4 lines)
+a=[2,3,4,5,7]; k=3
+print(a[k-1])
+🖥️ Output
+4
+📖 Explanation
+
+Steps:
+
+BST inorder → sorted list
+
+Kth smallest = index k-1
+
+Example:
+
+k = 3
+index = 2
+value = 4
+⏱️ Interview Insight
+
+Time Complexity → O(n)
+Space Complexity → O(n)
+
+🎤 Interview Explanation
+
+“I use inorder traversal since BST produces sorted values.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. What property defines a BST?
+A: Left subtree values are smaller than root and right subtree values are larger.
+
+Q2. Why does inorder traversal produce sorted values?
+A: Because BST maintains ordering between nodes.
+
+Q3. Difference between Binary Tree and BST?
+A: BST enforces ordering property.
+
+Q4. What is the average search complexity in BST?
+A: O(log n) if balanced.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Check Sorted Array
+a=[1,2,3,4]
+print(all(a[i]<a[i+1] for i in range(len(a)-1)))
+🔹 Find Kth Largest
+a=[2,3,4,5,7]; k=2
+print(sorted(a)[-k])
+✅ Day 16 Completed
+
+✔ Binary Search Tree
+✔ Validate BST
+✔ Kth Smallest Element
+
+📄 Added to your February Month-End DSA PDF with explanation.
+
+🚀 Next Topic (Tomorrow)
+
+📘 Heap (Priority Queue)
+
+Subtopics:
+
+• Kth Largest Element
+• Top K Frequent Elements
