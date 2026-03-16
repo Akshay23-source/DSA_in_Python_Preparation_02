@@ -1,0 +1,126 @@
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Kth Largest Element
+2️⃣ Top K Frequent Elements
+
+1️⃣ Kth Largest Element
+🔹 Concept
+
+A heap is a data structure that always keeps the largest or smallest element on top.
+
+Python provides a min-heap using heapq.
+
+🧠 Python Code (4 lines)
+import heapq
+a=[3,2,1,5,6,4]; k=2
+print(heapq.nlargest(k,a)[-1])
+🖥️ Output
+5
+📖 Explanation
+
+Array:
+
+[3,2,1,5,6,4]
+
+Sorted:
+
+[1,2,3,4,5,6]
+
+2nd largest → 5
+
+heapq.nlargest(k,a) returns:
+
+[6,5]
+
+Taking last element gives the kth largest.
+
+⏱️ Interview Insight
+
+Time Complexity → O(n log k)
+Space Complexity → O(k)
+
+🎤 Interview Explanation
+
+“Using a heap avoids sorting the entire array and improves efficiency.”
+
+2️⃣ Top K Frequent Elements
+🔹 Problem
+
+Find k most frequent numbers in an array.
+
+Example:
+
+[1,1,1,2,2,3]
+k = 2
+
+Most frequent → 1,2
+
+🧠 Python Code (5 lines)
+from collections import Counter
+import heapq
+a=[1,1,1,2,2,3]
+print(heapq.nlargest(2,Counter(a),key=Counter(a).get))
+🖥️ Output
+[1, 2]
+📖 Explanation
+
+Step 1 – Count frequencies
+
+1 → 3
+2 → 2
+3 → 1
+
+Step 2 – Use heap to get top 2 frequent numbers
+
+Result:
+
+[1,2]
+⏱️ Interview Insight
+
+Time Complexity → O(n log k)
+Space Complexity → O(n)
+
+🎤 Interview Explanation
+
+“I count frequencies using a hash map and use a heap to extract the top k elements.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. What is a heap?
+A: A complete binary tree used for efficiently retrieving min or max elements.
+
+Q2. Difference between max heap and min heap?
+A: Max heap keeps largest element on top, min heap keeps smallest.
+
+Q3. Why use heap instead of sorting?
+A: Sorting costs O(n log n) while heap can solve some problems faster.
+
+Q4. Where are heaps used?
+A: Priority queues, scheduling, Dijkstra algorithm.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Find Largest Element
+import heapq
+a=[1,5,3]
+print(heapq.nlargest(1,a)[0])
+🔹 Find 2 Smallest Numbers
+import heapq
+a=[7,3,9,1]
+print(heapq.nsmallest(2,a))
+✅ Day 17 Completed
+
+✔ Heap
+✔ Kth Largest
+✔ Top K Frequent
+
+📄 Added to your February Month-End DSA PDF with explanations.
+
+🚀 Next Topic
+
+📘 Greedy Algorithms
+
+Subtopics:
+
+Activity Selection
+
+Minimum Coins Problem
