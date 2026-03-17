@@ -1,0 +1,116 @@
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Activity Selection Problem
+2️⃣ Minimum Coins Problem
+
+1️⃣ Activity Selection Problem
+🔹 Problem
+
+Select maximum number of activities that don’t overlap.
+
+🧠 Python Code (5 lines)
+s=[1,3,0,5,8]; f=[2,4,6,7,9]
+a=sorted(zip(f,s))
+c=1; end=a[0][0]
+for x in a[1:]:
+    if x[1]>=end: c+=1; end=x[0]
+print(c)
+🖥️ Output
+3
+📖 Explanation
+
+Activities:
+
+Start: [1,3,0,5,8]
+End:   [2,4,6,7,9]
+
+Step 1 → Sort by finish time
+Step 2 → Always pick earliest finishing activity
+Step 3 → Skip overlapping ones
+
+Selected activities = maximum possible
+
+⏱️ Interview Insight
+
+Time Complexity: O(n log n)
+
+Strategy → Choose best option at each step
+
+🎤 Interview Explanation
+
+“Greedy works because choosing earliest finishing activity leaves room for more activities.”
+
+2️⃣ Minimum Coins Problem
+🔹 Problem
+
+Find minimum number of coins to make a value.
+
+Coins:
+
+[1, 2, 5]
+Value = 11
+🧠 Python Code (5 lines)
+coins=[5,2,1]; v=11; c=0
+for x in coins:
+    c+=v//x
+    v%=x
+print(c)
+🖥️ Output
+3
+📖 Explanation
+
+Take largest coin first:
+
+11 → 5 + 5 + 1
+
+Total coins = 3
+
+⏱️ Interview Insight
+
+Time Complexity: O(n)
+
+Works only for valid coin systems
+
+🎤 Interview Explanation
+
+“I pick the largest coin first to minimize number of coins.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. What is Greedy Algorithm?
+A: It makes the best local choice at each step.
+
+Q2. Does greedy always work?
+A: No, only when problem satisfies greedy property.
+
+Q3. Difference between Greedy and DP?
+A: Greedy makes local choices, DP explores all possibilities.
+
+Q4. Example where greedy fails?
+A: Some coin systems like [1,3,4] for value 6.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Sort Activities by End Time
+s=[1,2]; f=[3,4]
+print(sorted(zip(f,s)))
+🔹 Coin Count Simple
+v=7; coins=[5,2,1]; c=0
+for x in coins: c+=v//x; v%=x
+print(c)
+✅ Day 18 Completed
+
+✔ Greedy
+✔ Activity Selection
+✔ Minimum Coins
+
+📄 Added to your February Month-End DSA PDF with explanations.
+
+🚀 Next Topic
+
+📘 Backtracking
+
+Subtopics:
+
+Permutations
+
+Subsets
