@@ -1,0 +1,118 @@
+📘 Topic: Backtracking
+🎯 Focus Companies: Google, Amazon, Microsoft, Adobe
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Permutations
+2️⃣ Subsets
+
+1️⃣ Permutations
+🔹 Problem
+
+Generate all possible arrangements of elements.
+
+Example:
+
+[1,2] → [1,2], [2,1]
+🧠 Python Code (5 lines)
+from itertools import permutations
+a=[1,2]
+for p in permutations(a):
+    print(list(p))
+🖥️ Output
+[1, 2]
+[2, 1]
+📖 Explanation
+
+Permutation = different orderings
+
+itertools.permutations() generates all arrangements
+
+Each arrangement is unique
+
+⏱️ Interview Insight
+
+Time Complexity: O(n!)
+
+Used in:
+
+N-Queens
+
+Sudoku
+
+Combinations
+
+🎤 Interview Explanation
+
+“Backtracking explores all possible arrangements by trying every option.”
+
+2️⃣ Subsets
+🔹 Problem
+
+Generate all possible subsets.
+
+Example:
+
+[1,2] → [], [1], [2], [1,2]
+🧠 Python Code (5 lines)
+from itertools import combinations
+a=[1,2]
+for i in range(len(a)+1):
+    for c in combinations(a,i):
+        print(list(c))
+🖥️ Output
+[]
+[1]
+[2]
+[1, 2]
+📖 Explanation
+
+Subset = selection of elements
+
+We generate subsets of size 0 → n
+
+Each size gives different combinations
+
+⏱️ Interview Insight
+
+Time Complexity: O(2ⁿ)
+
+Important for:
+
+Recursion
+
+DP
+
+Bit masking
+
+🎤 Interview Explanation
+
+“Backtracking generates all subsets by including or excluding elements.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. What is backtracking?
+A: A technique that tries all possibilities and backtracks when a solution is invalid.
+
+Q2. Difference between permutation and subset?
+A: Permutation considers order, subset does not.
+
+Q3. Why is backtracking expensive?
+A: It explores all possibilities (exponential complexity).
+
+Q4. Where is it used?
+A: N-Queens, Sudoku, combinations, path problems.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Permutations (3 elements)
+from itertools import permutations
+print(list(permutations([1,2,3])))
+🔹 Subsets Count
+a=[1,2,3]
+print(2**len(a))
+✅ Day 19 Completed
+
+✔ Backtracking
+✔ Permutations
+✔ Subsets
+
+📄 Added to your February Month-End DSA PDF with explanations.
