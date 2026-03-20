@@ -1,0 +1,112 @@
+✅ Today’s Sub-Topics (IN DEPTH)
+
+1️⃣ Fibonacci using DP
+2️⃣ Coin Change (Minimum Coins)
+
+1️⃣ Fibonacci using DP
+🔹 Problem
+
+Find nth Fibonacci efficiently.
+
+🧠 Python Code (4 lines)
+dp=[0,1]
+for i in range(2,7):
+    dp.append(dp[i-1]+dp[i-2])
+print(dp[6])
+🖥️ Output
+8
+📖 Explanation
+
+Instead of recursion (slow), we store results:
+
+dp[0]=0
+dp[1]=1
+dp[2]=1
+dp[3]=2
+dp[4]=3
+dp[5]=5
+dp[6]=8
+
+Each value is reused → no recomputation.
+
+⏱️ Interview Insight
+
+Time: O(n)
+
+Space: O(n)
+
+Much faster than recursion (O(2ⁿ))
+
+🎤 Interview Explanation
+
+“DP avoids recomputation by storing previously calculated values.”
+
+2️⃣ Coin Change (Minimum Coins – DP)
+🔹 Problem
+
+Find minimum coins needed to make value.
+
+Example:
+
+coins = [1,2,5]
+value = 11
+🧠 Python Code (5 lines)
+coins=[1,2,5]; v=11
+dp=[0]+[999]*v
+for i in range(1,v+1):
+    dp[i]=min(dp[i-x]+1 for x in coins if i>=x)
+print(dp[v])
+🖥️ Output
+3
+📖 Explanation
+
+We build solution step by step:
+
+dp[i] = min coins needed for value i
+
+For 11:
+
+11 → 5 + 5 + 1 → 3 coins
+
+DP ensures we always get minimum.
+
+⏱️ Interview Insight
+
+Time: O(n × coins)
+
+Space: O(n)
+
+🎤 Interview Explanation
+
+“I build solutions bottom-up and reuse previous results to get optimal answer.”
+
+🎤 FAANG Interview Round (Professional Answers)
+
+Q1. What is Dynamic Programming?
+A: A technique to solve problems by storing results of subproblems.
+
+Q2. Difference between recursion and DP?
+A: DP avoids repeated calculations.
+
+Q3. What are two DP approaches?
+A: Top-down (memoization) and bottom-up (tabulation).
+
+Q4. When to use DP?
+A: When problem has overlapping subproblems and optimal substructure.
+
+📝 Practice (Easy – ≤ 6 Lines)
+🔹 Fibonacci (Optimized)
+a,b=0,1
+for _ in range(6): a,b=b,a+b
+print(a)
+🔹 Min Coins Simple
+v=7; coins=[1,2,5]; c=0
+for x in coins[::-1]: c+=v//x; v%=x
+print(c)
+✅ Day 20 Completed
+
+✔ Dynamic Programming
+✔ Fibonacci (DP)
+✔ Coin Change
+
+📄 Added to your February Month-End DSA PDF with full explanations.
